@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>sawtooth:walkthroughs:azure [Sawtooth Software Capstone 2019]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="sawtooth,walkthroughs,azure"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Sawtooth Software Capstone 2019"/>
+<link rel="start" href="azure.html"/>
+<link rel="contents" href="azure.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="azure.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="azure.html"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="azure.html"/>
+<link rel="canonical" href="https://sawtoothcapstone.com/doku.php?id=sawtooth:walkthroughs:azure"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php.t.dokuwiki.css"/>
+<link type="text/css" rel="stylesheet" href="../../lib/plugins/icons/assets/font-awesome/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="../../lib/plugins/icons/assets/material-design-icons/css/materialdesignicons.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../lib/plugins/codeprettify/code-prettify/src/prettify.css"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='sawtooth:walkthroughs';var SIG=' --- //[[wad11656@gmail.com|Wade Murdock]] 2020/04/13 15:04//';var JSINFO = {"id":"sawtooth:walkthroughs:azure","namespace":"sawtooth:walkthroughs","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/prettify.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/lang-css.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/lang-none.js"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../../lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki loggedIn   showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="../../start.html"  accesskey="h" title="[H]"><img src="../../wiki/logo.png" width="120" height="67" alt="" /> <span>Sawtooth Software Capstone 2019</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="user">Logged in as: <bdi>Wade Murdock</bdi> (<bdi>wad11656</bdi>)</li><li class="action profile"><a href="azure.html" title="Update Profile" rel="nofollow"><span>Update Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="azure.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="azure.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><input type="hidden" name="sectok" value="300a58f09ca2830afe33cb66ce7add94" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="export_pdf">Export to PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent Changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Update Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="azure.html" title="Recent Changes [r]" rel="nofollow" accesskey="r">Recent Changes</a></li><li class="action media"><a href="azure.html" title="Media Manager" rel="nofollow">Media Manager</a></li><li class="action index"><a href="azure.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="azure.html"  class="breadcrumbs" title="sawtooth:walkthroughs:azure">azure</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">Sidebar</h3>
+                    <div class="content"><div class="group">
+                                                                        
+<h1 class="sectionedit1" id="navigation">Navigation</h1>
+<div class="level1">
+
+<ul  class="extlist">
+  <li><div class="li"><span class="curid"><a href="../../start.html" class="wikilink1" title="start">Home</a></span></div></li>
+</ul>
+
+<p>
+<strong>Overviews</strong>
+</p>
+
+<ul  class="extlist">
+  <li><div class="li"><a href="../overviews/pipeline_overview.html" class="wikilink1" title="sawtooth:overviews:pipeline_overview">Pipeline Technologies Overview</a></div></li>
+  <li><div class="li"><a href="../overviews/key_words.html" class="wikilink1" title="sawtooth:overviews:key_words">Key Terminology</a></div></li>
+  <li><div class="li"><a href="../overviews/story.html" class="wikilink1" title="sawtooth:overviews:story"> A CI/CD Story</a></div></li>
+  <li><div class="li"><a href="../overviews/reasoning.html" class="wikilink1" title="sawtooth:overviews:reasoning">Reasoning for Selected Pipelines</a></div></li>
+</ul>
+
+<p>
+<strong>Comparisons</strong>
+</p>
+
+<ul  class="extlist">
+  <li><div class="li"><a href="../comparisons/azure_vs_jenkins.html" class="wikilink1" title="sawtooth:comparisons:azure_vs_jenkins">Azure vs. Jenkins &amp; AWS</a>
+<ul  class="extlist">
+  <li><div class="li"><a href="../comparisons/security.html" class="wikilink1" title="sawtooth:comparisons:security">Security Features</a></div></li>
+</ul>
+</li>
+  <li><div class="li"><a href="../comparisons/picalc_vs_sawtooth.html" class="wikilink1" title="sawtooth:comparisons:picalc_vs_sawtooth">PiCalc Demo App vs. Sawtooth&#039;s</a></div></li>
+</ul>
+
+<p>
+<strong>Walkthroughs</strong>
+</p>
+
+<ul  class="extlist">
+  <li><div class="li"><a href="azure.html" class="wikilink1" title="sawtooth:walkthroughs:azure">Azure</a>
+<ul  class="extlist">
+  <li><div class="li"><a href="azure.html" class="wikilink1" title="sawtooth:walkthroughs:azure">Part 1: Create the Repo</a></div></li>
+  <li><div class="li"><a href="azure2.html" class="wikilink1" title="sawtooth:walkthroughs:azure2">Part 2: Write the Code</a></div></li>
+  <li><div class="li"><a href="azure3.html" class="wikilink1" title="sawtooth:walkthroughs:azure3">Part 3: Build the Pipeline</a></div></li>
+</ul>
+</li>
+  <li><div class="li"><a href="jenkins_aws.html" class="wikilink1" title="sawtooth:walkthroughs:jenkins_aws">Jenkins &amp; AWS</a></div></li>
+</ul>
+
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>sawtooth:walkthroughs:azure</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#azure_tutorial_part_1create_the_repo">Azure Tutorial Part 1: Create the Repo</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#create_an_azure_devops_account">1. Create an Azure DevOps Account</a></div></li>
+<li class="level2"><div class="li"><a href="#rename_the_organization_and_create_a_project">2. Rename the Organization and Create a Project</a></div></li>
+<li class="level2"><div class="li"><a href="#create_an_ssh_key_pair_public_key_private_key">3. Create an SSH Key Pair (Public Key + Private Key)</a></div></li>
+<li class="level2"><div class="li"><a href="#copy_your_public_key_data_into_azure_devops">4. Copy your Public Key Data into Azure DevOps</a></div></li>
+<li class="level2"><div class="li"><a href="#clone_the_azure_devops_repo_to_your_computer">5. Clone the Azure DevOps Repo to your Computer</a></div></li>
+<li class="level2"><div class="li"><a href="#make_push_your_first_commit">6. Make &amp; Push your First Commit</a></div></li>
+<li class="level2"><div class="li"><a href="#optional_omit_unwanted_system_files_from_git_commits">7. (Optional) Omit Unwanted System Files from Git Commits</a></div></li>
+<li class="level2"><div class="li"><a href="#optional_make_your_readme_the_project_description">8. (Optional) Make your README the Project Description</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<script type="text/javascript">
+/*<![CDATA[*/
+        refresh_handler = function(e) {
+        var elements = document.querySelectorAll("*[data-src]");
+        for (var i = 0; i < elements.length; i++) {
+                var boundingClientRect = elements[i].getBoundingClientRect();
+                if (elements[i].hasAttribute("data-src") && boundingClientRect.top < window.innerHeight) {
+                    elements[i].setAttribute("src", elements[i].getAttribute("data-src"));
+                    elements[i].removeAttribute("data-src");
+                }
+            }
+        };
+
+        window.addEventListener('scroll', refresh_handler);
+        window.addEventListener('load', refresh_handler);
+        window.addEventListener('resize', refresh_handler);
+/*!]]>*/
+</script>
+
+<h1 class="sectionedit1" id="azure_tutorial_part_1create_the_repo">Azure Tutorial Part 1: Create the Repo</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[Azure Tutorial Part 1: Create the Repo] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="azure_tutorial_part_1create_the_repo" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="729-782" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="Azure Tutorial Part 1: Create the Repo">Edit</button></div></form></div>
+<h2 class="sectionedit2" id="create_an_azure_devops_account">1. Create an Azure DevOps Account</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Navigate to <a href="https://dev.azure.com" class="urlextern" target="_blank" title="https://dev.azure.com" rel="nofollow noopener">dev.azure.com</a>.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Click <img src="azure.html" data-src="start_free.png" width="85" /></div></li>
+  <li  value="3" data-marker="3."><div class="li">Choose an existing Microsoft account <strong><span style="color:#a9a9a9;">OR</span></strong> click <strong>No account? <em class="u">Create one!</em></strong></div></li>
+  <li  value="4" data-marker="4."><div class="li"><strong><span style="color:#a9a9a9;">(If creating new MS account)</span></strong> Enter your email, password, e-mailed verification #, and CAPTCHA</div></li>
+  <li  value="5" data-marker="5."><div class="li">Select the <strong>United States</strong> region</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'};document.getElementById('video1').src = '1_-_signup2_speed.mp4'">Show Me!</button>
+<div id="spoiler" style="display:none">
+<video id="video1" width="375" height="332" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[1. Create an Azure DevOps Account] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="create_an_azure_devops_account" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="783-1800" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="1. Create an Azure DevOps Account">Edit</button></div></form></div>
+<h2 class="sectionedit3" id="rename_the_organization_and_create_a_project">2. Rename the Organization and Create a Project</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click <img src="azure.html" data-src="project_settings.png" width="100" /> in the bottom left to bring up the organization <strong>Overview</strong>.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Enter a new <strong>Name</strong>.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Choose the correct <strong>Time Zone</strong> and click <strong>Save</strong>.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Re-enter your new organization name to confirm changes.</div></li>
+  <li  value="5" data-marker="5."><div class="li">Enter your <strong>Project name</strong> <span style="color:#a9a9a9;">(<strong>Hint</strong>: Avoid using special characters)</span> and click <img src="azure.html" data-src="create_proj.png" width="100" />.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler2') .style.display=='none') {document.getElementById('spoiler2') .style.display=''}else{document.getElementById('spoiler2') .style.display='none'};document.getElementById('video2').src = '2_-_createproj_speed2.mp4'">Show Me!</button>
+<div id="spoiler2" style="display:none">
+<video id="video2" width="380" height="231" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[2. Rename the Organization and Create a Project] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="rename_the_organization_and_create_a_project" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="1801-2963" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="2. Rename the Organization and Create a Project">Edit</button></div></form></div>
+<h2 class="sectionedit4" id="create_an_ssh_key_pair_public_key_private_key">3. Create an SSH Key Pair (Public Key + Private Key)</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click your profile icon in the top right (<img src="azure.html" data-src="user_icon.png" width="20" />) and click the ellipses <strong>More options</strong> icon (<img src="azure.html" data-src="ellipses.png" width="20" />).</div></li>
+  <li  value="2" data-marker="2."><div class="li">Click <img src="azure.html" data-src="user_settings.png" width="100" /> then <img src="azure.html" data-src="ssh_pub.png" width="120" />. <strong>Stay on this page for Step 4.</strong></div></li>
+  <li  value="3" data-marker="3."><div class="li">Generate the private+public key pair:
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="3.1"><div class="li">Open a terminal (MacOS/Linux) or <a href="https://gitforwindows.org/" class="urlextern" target="_blank" title="https://gitforwindows.org/" rel="nofollow noopener">Git BASH (Windows)</a></div></li>
+  <li  value="2" data-marker="3.2"><div class="li">Run <code><span style="color:#ff0000;">ssh-keygen -t rsa</span></code></div></li>
+  <li  value="3" data-marker="3.3"><div class="li">Enter the filepath you want the key saved in.
+<ul  class="extlist">
+  <li><div class="li"><em><strong>Default filepath</strong> = <code><span style="color:#ff0000;">\Users\your_username\.ssh\id_rsa</span></code>, where <code><span style="color:#ff0000;">id_rsa</span></code> and <code><span style="color:#ff0000;">id_rsa.pub</span></code> will be the private and public key filenames.</em></div></li>
+</ul>
+</li>
+  <li  value="4" data-marker="3.4"><div class="li"><strong><span style="color:#a9a9a9;">(Optional)</span></strong> Secure you SSH key pair with a password when prompted.</div></li>
+</ol>
+</li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler3') .style.display=='none') {document.getElementById('spoiler3') .style.display=''}else{document.getElementById('spoiler3') .style.display='none'};document.getElementById('video3').src = '3_-_gen_ssh_speed.mp4'">Show Me!</button>
+<div id="spoiler3" style="display:none">
+<video id="video3" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+<div class="wrap_indent plugin_wrap">
+<h4 id="if_you_secured_your_ssh_key_pair_with_a_password_don_t_want_to_enter_it_every_time_you_ssh">If you secured your SSH key pair with a password &amp; don&#039;t want to enter it every time you SSH:</h4>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Start an ssh-agent to use on your machine, with <code><span style="color:#ff0000;">eval ssh-agent</span></code>.</div></li>
+  <li  value="2" data-marker="2."><div class="li"><code><span style="color:#ff0000;">ssh-add</span></code> your key, type your password once.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Profit! You can now ssh to any host that has your public key without having to enter a password.</div></li>
+</ol>
+<div class="wrap_indent plugin_wrap">
+<h5 id="resources">Resources</h5>
+
+<p>
+<a href="http://rabexc.org/posts/using-ssh-agent" class="urlextern" target="_blank" title="http://rabexc.org/posts/using-ssh-agent" rel="nofollow noopener"> Using an ssh-agent, or how to type your ssh password once, safely.</a>
+</p>
+
+<p>
+<a href="https://apple.stackexchange.com/a/275432/272654" class="urlextern" target="_blank" title="https://apple.stackexchange.com/a/275432/272654" rel="nofollow noopener"> ssh-add Persist Between Reboots (MacOS)</a>
+</p>
+</div></div>
+</div>
+<div class='secedit editbutton_section editbutton_4'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[3. Create an SSH Key Pair (Public Key + Private Key)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="create_an_ssh_key_pair_public_key_private_key" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2964-5314" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="3. Create an SSH Key Pair (Public Key + Private Key)">Edit</button></div></form></div>
+<h2 class="sectionedit9" id="copy_your_public_key_data_into_azure_devops">4. Copy your Public Key Data into Azure DevOps</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Navigate to the directory housing your key pair (Chosen in <strong>Step 3.3c</strong>).</div></li>
+  <li  value="2" data-marker="2."><div class="li">Open the the public key (<strong>Default</strong> = <code><span style="color:#ff0000;">id_rsa.pub</span></code>) in a text editor and <strong>copy</strong> its contents.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Navigate to the Azure DevOps web page you opened in <strong>Step 3.2</strong> and click <img src="azure.html" data-src="new_key.png" width="85" />.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Name the key pairing associated with your computer. (For example, your computer&#039;s <strong>hostname</strong>.)</div></li>
+  <li  value="5" data-marker="5."><div class="li">Paste the contents you copied in <strong>Step 4.2</strong> into the <strong>Public Key Data</strong> field.</div></li>
+  <li  value="6" data-marker="6."><div class="li">Click <img src="azure.html" data-src="add_button.png" width="40" />.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler4') .style.display=='none') {document.getElementById('spoiler4') .style.display=''}else{document.getElementById('spoiler4') .style.display='none'};document.getElementById('video4').src = '4_-_ssh_key_into_azure_speed.mp4'">Show Me!</button>
+<div id="spoiler4" style="display:none">
+<video id="video4" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[4. Copy your Public Key Data into Azure DevOps] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="copy_your_public_key_data_into_azure_devops" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="5315-6616" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="4. Copy your Public Key Data into Azure DevOps">Edit</button></div></form></div>
+<h2 class="sectionedit10" id="clone_the_azure_devops_repo_to_your_computer">5. Clone the Azure DevOps Repo to your Computer</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Go the Azure DevOps landing page by clicking <img src="azure.html" data-src="azure_devops.png" width="120" /> in the top left.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Click your project tile on the landing page.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Click <img src="azure.html" data-src="repos.png" width="85" /> in the left-hand navigation bar.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Click <img src="azure.html" data-src="clone_button.png" width="85" /> in the upper-right of the <strong>Repos</strong> page.</div></li>
+  <li  value="5" data-marker="5."><div class="li"><strong>Copy</strong> the SSH address by clicking <img src="azure.html" data-src="https_ssh.png" width="85" /> then <img src="azure.html" data-src="copy_clipboard.png" width="30" />.</div></li>
+  <li  value="6" data-marker="6."><div class="li">In a terminal (MacOS/Linux) or Git BASH (Windows), <code><span style="color:#ff0000;">cd</span></code> to the directory where you&#039;d like to store the Azure DevOps repo on your computer.
+<ul  class="extlist">
+  <li><div class="li"><em><strong>Note:</strong> The <code><span style="color:#ff0000;">clone</span></code> command will automatically create a new folder with your repo&#039;s files in it, so no need to manually create that folder beforehand.</em></div></li>
+</ul>
+</li>
+  <li  value="7" data-marker="7."><div class="li">Type <code><span style="color:#ff0000;">git clone</span></code> followed by a <strong>space</strong>, then <strong>paste</strong> and <strong>run</strong> the SSH address to <code><span style="color:#ff0000;">clone</span></code> the Azure DevOps repo onto your computer.
+<ul  class="extlist">
+  <li><div class="li"><em><strong>Example</strong>: <code><span style="color:#ff0000;">git clone git@ssh.dev.azure.com:v3/humanbeing/SawtoothCapstone2019/demo_app</span></code></em></div></li>
+</ul>
+</li>
+  <li  value="8" data-marker="8."><div class="li"><code><span style="color:#ff0000;">cd</span></code> into your newly-<code><span style="color:#ff0000;">clone</span></code>d local repo directory.</div></li>
+  <li  value="9" data-marker="9."><div class="li">Run <code><span style="color:#ff0000;">ls -a</span></code> in your terminal/Git BASH to show all files in the current directory (including hidden ones) and confirm you see the hidden <code><span style="color:#ff0000;">.git</span></code> directory.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler5') .style.display=='none') {document.getElementById('spoiler5') .style.display=''}else{document.getElementById('spoiler5') .style.display='none'};document.getElementById('video5').src = '5_-_clone_repo2_speed.mp4'">Show Me!</button>
+<div id="spoiler5" style="display:none">
+<video id="video5" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[5. Clone the Azure DevOps Repo to your Computer] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="clone_the_azure_devops_repo_to_your_computer" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6617-8965" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="5. Clone the Azure DevOps Repo to your Computer">Edit</button></div></form></div>
+<h2 class="sectionedit11" id="make_push_your_first_commit">6. Make &amp; Push your First Commit</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Create (<code><span style="color:#ff0000;">touch</span></code>) a <code><span style="color:#ff0000;">README.md</span></code> file in your local repo&#039;s directory.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Open the file with a text editor (i.e., <code><span style="color:#ff0000;">nano README.md</span></code>) and add a short description to the file.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Save the file (<code><span style="color:#ff0000;">ctrl+O</span></code> in <code><span style="color:#ff0000;">nano</span></code>) and close the file (<code><span style="color:#ff0000;">ctrl+X</span></code> in <code><span style="color:#ff0000;">nano</span></code>).</div></li>
+  <li  value="4" data-marker="4."><div class="li">Run <code><span style="color:#ff0000;">ls -a</span></code> in your terminal/Git BASH to show all files in the current directory (including hidden ones) and confirm you see the <code><span style="color:#ff0000;">.git</span></code> directory and your newly-created <code><span style="color:#ff0000;">README.md</span></code>.</div></li>
+  <li  value="5" data-marker="5."><div class="li">Run <code><span style="color:#ff0000;">git add .</span></code> to add all files in the current directory–and in its subdirectories–to the Git <strong>Staging</strong> area.</div></li>
+  <li  value="6" data-marker="6."><div class="li">Run <code><span style="color:#ff0000;">git commit -m “your_commit_comment_here”</span></code> to wrap up all the <strong>Staged</strong> files into a single revision (a.k.a. a <strong>commit</strong>).</div></li>
+  <li  value="7" data-marker="7."><div class="li">Run <code><span style="color:#ff0000;">git push origin master</span></code> to <code><span style="color:#ff0000;">push</span></code> your <strong>committed</strong> files to the <code><span style="color:#ff0000;">origin</span></code> repo&#039;s <code><span style="color:#ff0000;">master</span></code> branch.
+<ul  class="extlist">
+  <li><div class="li"><em><strong>Note:</strong> The <strong>origin</strong> repo is the repo in Azure DevOps, which you <strong>origin</strong>ally cloned from.</em></div></li>
+</ul>
+</li>
+  <li  value="8" data-marker="8."><div class="li">Refresh your repo&#039;s web page in Azure DevOps and check if your newly-<strong>push</strong>ed <code><span style="color:#ff0000;">README.md</span></code> is listed in the <img src="azure.html" data-src="master_branch.png" width="70" /> branch.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler6') .style.display=='none') {document.getElementById('spoiler6') .style.display=''}else{document.getElementById('spoiler6') .style.display='none'};document.getElementById('video6').src = '6_-_first_commit_speed.mp4'">Show Me!</button>
+<div id="spoiler6" style="display:none">
+<video id="video6" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_11'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[6. Make &amp; Push your First Commit] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="make_push_your_first_commit" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="8966-11016" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="6. Make &amp; Push your First Commit">Edit</button></div></form></div>
+<h2 class="sectionedit12" id="optional_omit_unwanted_system_files_from_git_commits">7. (Optional) Omit Unwanted System Files from Git Commits</h2>
+<div class="level2">
+
+<p>
+If you have unwanted system files showing up in your repos…
+</p>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Delete all unwanted files from your local repo&#039;s directory and subdirectories.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Create a new file called <code><span style="color:#ff0000;">.gitignore_global</span></code>. (A good place is in the root of your user&#039;s folder.)</div></li>
+  <li  value="3" data-marker="3."><div class="li">List all the names of files you&#039;d like to omit from all future <code><span style="color:#ff0000;">git commit</span></code>s.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Run <code><span style="color:#ff0000;">git config –global core.excludesfile /path/to/.gitignore_global</span></code> to set your file as the global gitignore file for your git installation.</div></li>
+  <li  value="5" data-marker="5."><div class="li">Push your local repo to the Azure DevOps <strong>master</strong> branch by following <strong>Steps 6.5 - 6.8</strong>.</div></li>
+  <li  value="6" data-marker="6."><div class="li">Test the functionality of your <code><span style="color:#ff0000;">.gitignore_global</span></code> by refreshing your Azure DevOps repo web page and ensuring the unwanted system files are no longer in the current <strong>master</strong> branch revision.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler7') .style.display=='none') {document.getElementById('spoiler7') .style.display=''}else{document.getElementById('spoiler7') .style.display='none'};document.getElementById('video7').src = '7_-_global_gitignore_speed.mp4'">Show Me!</button>
+<div id="spoiler7" style="display:none">
+<video id="video7" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_12'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[7. (Optional) Omit Unwanted System Files from Git Commits] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="optional_omit_unwanted_system_files_from_git_commits" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="11017-12478" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="7. (Optional) Omit Unwanted System Files from Git Commits">Edit</button></div></form></div>
+<h2 class="sectionedit13" id="optional_make_your_readme_the_project_description">8. (Optional) Make your README the Project Description</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Hover over <img src="azure.html" data-src="overview.png" width="85" /> in the left-hand navigation panel and click <img src="azure.html" data-src="summary.png" width="150" />.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Click <img src="azure.html" data-src="add_project_description.png" width="150" />.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Under the <strong>About</strong> header, make sure the <img src="azure.html" data-src="readme.png" width="150" /> radio button is selected.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Select your repo from the <img src="azure.html" data-src="select_repo.png" width="130" /> dropdown and click <img src="azure.html" data-src="azure_devops.png" width="85" />.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler8') .style.display=='none') {document.getElementById('spoiler8') .style.display=''}else{document.getElementById('spoiler8') .style.display='none'};document.getElementById('video8').src = '8_-_readme_description_speed.mp4'">Show Me!</button>
+<div id="spoiler8" style="display:none">
+<video id="video8" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_13'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1585388552" /><input type="hidden" name="summary" value="[8. (Optional) Make your README the Project Description] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="optional_make_your_readme_the_project_description" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="12479-" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure" /><button type="submit" title="8. (Optional) Make your README the Project Description">Edit</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>sawtooth/walkthroughs/azure.txt</bdi> · Last modified: 2020/03/28 09:42 by <bdi>wad11656</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="azure.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="azure.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="azure.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="siteexport_addpage"><a href="azure.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="export_pdf"><a href="azure.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" class="urlextern" target="_blank">CC Attribution-Share Alike 4.0 International</a></bdi></div>
+    <div class="buttons">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank"><img src="../../lib/images/license/button/cc-by-sa.png" alt="CC Attribution-Share Alike 4.0 International" /></a>        <a href="https://www.dokuwiki.org/donate" title="Donate" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.profile.css3?profile=css3" title="Valid CSS" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img  width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>

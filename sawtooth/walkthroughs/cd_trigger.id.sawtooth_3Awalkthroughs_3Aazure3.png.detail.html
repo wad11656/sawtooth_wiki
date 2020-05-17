@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>
+        sawtooth:walkthroughs:cd_trigger.png        [Sawtooth Software Capstone 2019]
+    </title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Sawtooth Software Capstone 2019"/>
+<link rel="start" href="azure3.html"/>
+<link rel="contents" href="azure3.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="alternate" type="text/html" title="Plain HTML" href="azure3.html"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="azure3.html"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php.t.dokuwiki.css"/>
+<link type="text/css" rel="stylesheet" href="../../lib/plugins/icons/assets/font-awesome/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="../../lib/plugins/icons/assets/material-design-icons/css/materialdesignicons.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../lib/plugins/codeprettify/code-prettify/src/prettify.css"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='';var SIG=' --- //[[wad11656@gmail.com|Wade Murdock]] 2020/04/13 15:04//';var JSINFO = {"id":"sawtooth:walkthroughs:azure3","namespace":"","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/prettify.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/lang-css.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/lang-none.js"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../../lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_ tpl_dokuwiki loggedIn  ">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="../../start.html"  accesskey="h" title="[H]"><img src="../../wiki/logo.png" width="120" height="67" alt="" /> <span>Sawtooth Software Capstone 2019</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="user">Logged in as: <bdi>Wade Murdock</bdi> (<bdi>wad11656</bdi>)</li><li class="action profile"><a href="azure3.html" title="Update Profile" rel="nofollow"><span>Update Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="azure3.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="azure3.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><input type="hidden" name="sectok" value="13762cdb2c70195206e5ac70ad5c691c" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="">Show page</option><option value="revisions">Old revisions</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="export_pdf">Export to PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent Changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Update Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="azure3.html" title="Recent Changes [r]" rel="nofollow" accesskey="r">Recent Changes</a></li><li class="action media"><a href="azure3.html" title="Media Manager" rel="nofollow">Media Manager</a></li><li class="action index"><a href="azure3.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="azure3.html"  class="breadcrumbs" title="sawtooth:walkthroughs:azure3">azure3</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group" id="dokuwiki__detail">
+
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                                    <div class="pageId"><span>sawtooth:walkthroughs:cd_trigger.png</span></div>
+                
+                <div class="page group">
+                                                            <!-- detail start -->
+                                                                    <h1>cd_trigger.png</h1>
+
+                        <a href="cd_trigger.png" title="View original file"><img width="698" height="700" class="img_detail" alt="cd_trigger.png" title="cd_trigger.png" src="cd_trigger.h.700_tok.91cf0d_w.698.png"/></a>
+                        <div class="img_detail">
+                            <dl><dt>Date:</dt><dd>2020/04/08 08:56</dd><dt>Filename:</dt><dd>cd_trigger.png</dd><dt>Format:</dt><dd>PNG</dd><dt>Size:</dt><dd>70KB</dd><dt>Width:</dt><dd>800</dd><dt>Height:</dt><dd>802</dd></dl>                            <dl>
+                            <dt>References for:</dt><dd><span class="curid"><a href="azure3.html" class="wikilink1" title="sawtooth:walkthroughs:azure3">azure3</a></span></dd>                            </dl>
+                            <p>This list might not be complete due to ACL restrictions and hidden pages.</p>
+                        </div>
+                                                            </div>
+                <!-- detail stop -->
+                                
+                
+            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+                            <div id="dokuwiki__pagetools">
+                    <h3 class="a11y">Page Tools</h3>
+                    <div class="tools">
+                        <ul>
+                            <li class="mediaManager"><a href="azure3.image.sawtooth_3Awalkthroughs_3Acd_trigger.png.html" title="View in media manager" rel="nofollow"><span>View in media manager</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 17l4.5-6 3.5 4.5 2.5-3L19 17m1-11h-8l-2-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2z"/></svg></a></li><li class="img_backto"><a href="azure3.html" title="Back to sawtooth:walkthroughs:azure3 [b]" rel="nofollow" accesskey="b"><span>Back to sawtooth:walkthroughs:azure3</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                        </ul>
+                    </div>
+                </div>
+                    </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" class="urlextern" target="_blank">CC Attribution-Share Alike 4.0 International</a></bdi></div>
+    <div class="buttons">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank"><img src="../../lib/images/license/button/cc-by-sa.png" alt="CC Attribution-Share Alike 4.0 International" /></a>        <a href="https://www.dokuwiki.org/donate" title="Donate" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.profile.css3?profile=css3" title="Valid CSS" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+</body>
+</html>

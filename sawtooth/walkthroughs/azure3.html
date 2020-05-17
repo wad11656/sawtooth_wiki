@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="no-js">
+<head>
+    <meta charset="utf-8" />
+    <title>sawtooth:walkthroughs:azure3 [Sawtooth Software Capstone 2019]</title>
+    <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
+    <meta name="generator" content="DokuWiki"/>
+<meta name="theme-color" content="#008800"/>
+<meta name="robots" content="index,follow"/>
+<meta name="keywords" content="sawtooth,walkthroughs,azure3"/>
+<link rel="search" type="application/opensearchdescription+xml" href="../../lib/exe/opensearch.html" title="Sawtooth Software Capstone 2019"/>
+<link rel="start" href="azure3.html"/>
+<link rel="contents" href="azure3.html" title="Sitemap"/>
+<link rel="manifest" href="../../lib/exe/manifest.html"/>
+<link rel="alternate" type="application/rss+xml" title="Recent Changes" />
+<link rel="alternate" type="application/rss+xml" title="Current namespace" />
+<link rel="edit" title="Edit this page" href="azure3.html"/>
+<link rel="alternate" type="text/html" title="Plain HTML" href="azure3.html"/>
+<link rel="alternate" type="text/plain" title="Wiki Markup" href="azure3.html"/>
+<link rel="canonical" href="https://sawtoothcapstone.com/doku.php?id=sawtooth:walkthroughs:azure3"/>
+<link rel="stylesheet" type="text/css" href="../../lib/exe/css.php.t.dokuwiki.css"/>
+<link type="text/css" rel="stylesheet" href="../../lib/plugins/icons/assets/font-awesome/css/font-awesome.min.css"/>
+<link type="text/css" rel="stylesheet" href="../../lib/plugins/icons/assets/material-design-icons/css/materialdesignicons.min.css"/>
+<link rel="stylesheet" type="text/css" href="../../lib/plugins/codeprettify/code-prettify/src/prettify.css"/>
+<!--[if gte IE 9]><!-->
+<script type="text/javascript">/*<![CDATA[*/var NS='sawtooth:walkthroughs';var SIG=' --- //[[wad11656@gmail.com|Wade Murdock]] 2020/04/13 15:04//';var JSINFO = {"id":"sawtooth:walkthroughs:azure3","namespace":"sawtooth:walkthroughs","ACT":"show","useHeadingNavigation":0,"useHeadingContent":0};
+/*!]]>*/</script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/jquery.php.t.dokuwiki.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/exe/js.php.t.dokuwiki.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/prettify.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/lang-css.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../lib/plugins/codeprettify/code-prettify/src/lang-none.js"></script>
+<!--<![endif]-->
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../../lib/tpl/dokuwiki/images/favicon.ico" />
+<link rel="apple-touch-icon" href="../../lib/tpl/dokuwiki/images/apple-touch-icon.png" />
+    </head>
+
+<body>
+    <div id="dokuwiki__site"><div id="dokuwiki__top" class="site dokuwiki mode_show tpl_dokuwiki loggedIn   showSidebar hasSidebar">
+
+        
+<!-- ********** HEADER ********** -->
+<div id="dokuwiki__header"><div class="pad group">
+
+    
+    <div class="headings group">
+        <ul class="a11y skip">
+            <li><a href="#dokuwiki__content">skip to content</a></li>
+        </ul>
+
+        <h1><a href="../../start.html"  accesskey="h" title="[H]"><img src="../../wiki/logo.png" width="120" height="67" alt="" /> <span>Sawtooth Software Capstone 2019</span></a></h1>
+            </div>
+
+    <div class="tools group">
+        <!-- USER TOOLS -->
+                    <div id="dokuwiki__usertools">
+                <h3 class="a11y">User Tools</h3>
+                <ul>
+                    <li class="user">Logged in as: <bdi>Wade Murdock</bdi> (<bdi>wad11656</bdi>)</li><li class="action profile"><a href="azure3.html" title="Update Profile" rel="nofollow"><span>Update Profile</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M2 3h20c1.05 0 2 .95 2 2v14c0 1.05-.95 2-2 2H2c-1.05 0-2-.95-2-2V5c0-1.05.95-2 2-2m12 3v1h8V6h-8m0 2v1h8V8h-8m0 2v1h7v-1h-7m-6 3.91C6 13.91 2 15 2 17v1h12v-1c0-2-4-3.09-6-3.09M8 6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3z"/></svg></a></li><li class="action admin"><a href="azure3.html" title="Admin" rel="nofollow"><span>Admin</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97 0-.33-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1 0 .33.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.66z"/></svg></a></li><li class="action logout"><a href="azure3.html" title="Log Out" rel="nofollow"><span>Log Out</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 17.25V14h-7v-4h7V6.75L22.25 12 17 17.25M13 2a2 2 0 0 1 2 2v4h-2V4H4v16h9v-4h2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9z"/></svg></a></li>                </ul>
+            </div>
+        
+        <!-- SITE TOOLS -->
+        <div id="dokuwiki__sitetools">
+            <h3 class="a11y">Site Tools</h3>
+            <form action="../../start.html" method="get" role="search" class="search doku_form" id="dw__search" accept-charset="utf-8"><input type="hidden" name="do" value="search" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><div class="no"><input name="q" type="text" class="edit" title="[F]" accesskey="f" placeholder="Search" autocomplete="on" id="qsearch__in" value="" /><button value="1" type="submit" title="Search">Search</button><div id="qsearch__out" class="ajax_qsearch JSpopup"></div></div></form>            <div class="mobileTools">
+                <form action="../..//doku.html.doku.php.html" method="get" accept-charset="utf-8"><div class="no"><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><input type="hidden" name="sectok" value="13762cdb2c70195206e5ac70ad5c691c" /><select name="do" class="edit quickselect" title="Tools"><option value="">Tools</option><optgroup label="Page Tools"><option value="edit">Edit this page</option><option value="revisions">Old revisions</option><option value="siteexport_addpage">Export Page to HTML/PDF</option><option value="export_pdf">Export to PDF</option><option value="backlink">Backlinks</option></optgroup><optgroup label="Site Tools"><option value="recent">Recent Changes</option><option value="media">Media Manager</option><option value="index">Sitemap</option></optgroup><optgroup label="User Tools"><option value="profile">Update Profile</option><option value="admin">Admin</option><option value="logout">Log Out</option></optgroup></select><button type="submit">&gt;</button></div></form>            </div>
+            <ul>
+                <li class="action recent"><a href="azure3.html" title="Recent Changes [r]" rel="nofollow" accesskey="r">Recent Changes</a></li><li class="action media"><a href="azure3.html" title="Media Manager" rel="nofollow">Media Manager</a></li><li class="action index"><a href="azure3.html" title="Sitemap [x]" rel="nofollow" accesskey="x">Sitemap</a></li>            </ul>
+        </div>
+
+    </div>
+
+    <!-- BREADCRUMBS -->
+            <div class="breadcrumbs">
+                                        <div class="trace"><span class="bchead">Trace:</span> <span class="bcsep">•</span> <span class="curid"><bdi><a href="azure3.html"  class="breadcrumbs" title="sawtooth:walkthroughs:azure3">azure3</a></bdi></span></div>
+                    </div>
+    
+
+
+    <hr class="a11y" />
+</div></div><!-- /header -->
+
+        <div class="wrapper group">
+
+                            <!-- ********** ASIDE ********** -->
+                <div id="dokuwiki__aside"><div class="pad aside include group">
+                    <h3 class="toggle">Sidebar</h3>
+                    <div class="content"><div class="group">
+                                                                        
+<h1 class="sectionedit1" id="navigation">Navigation</h1>
+<div class="level1">
+
+<ul  class="extlist">
+  <li><div class="li"><span class="curid"><a href="../../start.html" class="wikilink1" title="start">Home</a></span></div></li>
+</ul>
+
+<p>
+<strong>Overviews</strong>
+</p>
+
+<ul  class="extlist">
+  <li><div class="li"><a href="../overviews/pipeline_overview.html" class="wikilink1" title="sawtooth:overviews:pipeline_overview">Pipeline Technologies Overview</a></div></li>
+  <li><div class="li"><a href="../overviews/key_words.html" class="wikilink1" title="sawtooth:overviews:key_words">Key Terminology</a></div></li>
+  <li><div class="li"><a href="../overviews/story.html" class="wikilink1" title="sawtooth:overviews:story"> A CI/CD Story</a></div></li>
+  <li><div class="li"><a href="../overviews/reasoning.html" class="wikilink1" title="sawtooth:overviews:reasoning">Reasoning for Selected Pipelines</a></div></li>
+</ul>
+
+<p>
+<strong>Comparisons</strong>
+</p>
+
+<ul  class="extlist">
+  <li><div class="li"><a href="../comparisons/azure_vs_jenkins.html" class="wikilink1" title="sawtooth:comparisons:azure_vs_jenkins">Azure vs. Jenkins &amp; AWS</a>
+<ul  class="extlist">
+  <li><div class="li"><a href="../comparisons/security.html" class="wikilink1" title="sawtooth:comparisons:security">Security Features</a></div></li>
+</ul>
+</li>
+  <li><div class="li"><a href="../comparisons/picalc_vs_sawtooth.html" class="wikilink1" title="sawtooth:comparisons:picalc_vs_sawtooth">PiCalc Demo App vs. Sawtooth&#039;s</a></div></li>
+</ul>
+
+<p>
+<strong>Walkthroughs</strong>
+</p>
+
+<ul  class="extlist">
+  <li><div class="li"><a href="azure.html" class="wikilink1" title="sawtooth:walkthroughs:azure">Azure</a>
+<ul  class="extlist">
+  <li><div class="li"><a href="azure.html" class="wikilink1" title="sawtooth:walkthroughs:azure">Part 1: Create the Repo</a></div></li>
+  <li><div class="li"><a href="azure2.html" class="wikilink1" title="sawtooth:walkthroughs:azure2">Part 2: Write the Code</a></div></li>
+  <li><div class="li"><a href="azure3.html" class="wikilink1" title="sawtooth:walkthroughs:azure3">Part 3: Build the Pipeline</a></div></li>
+</ul>
+</li>
+  <li><div class="li"><a href="jenkins_aws.html" class="wikilink1" title="sawtooth:walkthroughs:jenkins_aws">Jenkins &amp; AWS</a></div></li>
+</ul>
+
+</div>
+                                            </div></div>
+                </div></div><!-- /aside -->
+            
+            <!-- ********** CONTENT ********** -->
+            <div id="dokuwiki__content"><div class="pad group">
+                
+                <div class="pageId"><span>sawtooth:walkthroughs:azure3</span></div>
+
+                <div class="page group">
+                                                            <!-- wikipage start -->
+                    <!-- TOC START -->
+<div id="dw__toc" class="dw__toc">
+<h3 class="toggle">Table of Contents</h3>
+<div>
+
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#azure_tutorial_part_3build_the_pipeline">Azure Tutorial Part 3: Build the Pipeline</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#create_a_new_pipeline">1. Create a new Pipeline</a></div></li>
+<li class="level2"><div class="li"><a href="#add_tasksnuget_restore_visual_studio_build">2. Add Tasks: NuGet Restore &amp; Visual Studio Build</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#nuget_restore">NuGet Restore</a></div></li>
+<li class="level3"><div class="li"><a href="#visual_studio_build">Visual Studio Build</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#add_taskcommand_line">3. Add Task: Command Line</a></div></li>
+<li class="level2"><div class="li"><a href="#add_taskvisual_studio_test">4. Add Task: Visual Studio Test</a></div></li>
+<li class="level2"><div class="li"><a href="#run_the_pipeline_view_the_test_results">5. Run the Pipeline &amp; View the Test Results</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#run_the_pipeline">Run the Pipeline</a></div></li>
+<li class="level3"><div class="li"><a href="#review_the_test_results">Review the Test Results</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#change_a_test_to_fail_re-run_the_pipeline">6. Change a Test to Fail &amp; Re-run the Pipeline</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#change_a_test_to_fail">Change a Test to Fail</a></div></li>
+<li class="level3"><div class="li"><a href="#re-run_the_pipeline_view_the_results">Re-run the Pipeline &amp; View the Results</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#configure_continuous_integration_ci">7. Configure Continuous Integration (CI)</a></div></li>
+<li class="level2"><div class="li"><a href="#trigger_continuous_integration">8. Trigger Continuous Integration</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#fix_the_failed_test_trigger_ci">Fix the Failed Test &amp; Trigger CI</a></div></li>
+<li class="level3"><div class="li"><a href="#review_the_test_results1">Review the Test Results</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#configure_continuous_deployment_cd">9. Configure Continuous Deployment (CD)</a></div></li>
+</ul></li>
+</ul>
+</div>
+</div>
+<!-- TOC END -->
+<script type="text/javascript">
+/*<![CDATA[*/
+        refresh_handler = function(e) {
+        var elements = document.querySelectorAll("*[data-src]");
+        for (var i = 0; i < elements.length; i++) {
+                var boundingClientRect = elements[i].getBoundingClientRect();
+                if (elements[i].hasAttribute("data-src") && boundingClientRect.top < window.innerHeight) {
+                    elements[i].setAttribute("src", elements[i].getAttribute("data-src"));
+                    elements[i].removeAttribute("data-src");
+                }
+            }
+        };
+
+        window.addEventListener('scroll', refresh_handler);
+        window.addEventListener('load', refresh_handler);
+        window.addEventListener('resize', refresh_handler);
+/*!]]>*/
+</script>
+
+<h1 class="sectionedit1" id="azure_tutorial_part_3build_the_pipeline">Azure Tutorial Part 3: Build the Pipeline</h1>
+<div class="level1">
+
+</div>
+<div class='secedit editbutton_section editbutton_1'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[Azure Tutorial Part 3: Build the Pipeline] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="azure_tutorial_part_3build_the_pipeline" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="729-785" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="Azure Tutorial Part 3: Build the Pipeline">Edit</button></div></form></div>
+<h2 class="sectionedit2" id="create_a_new_pipeline">1. Create a new Pipeline</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Refresh the <strong>Repos</strong> page to confirm your code was successfully <code><span style="color:#ff0000;">push</span></code>ed to it.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:pipeline.png" width=80px /> then <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:create_pipeline.png" width=80px />.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:use_classic_editor.png" width=120px /> at the bottom of the page.
+<ul  class="extlist">
+  <li><div class="li">This gives you the option to create a pipeline through a <abbr title="Graphical User Interface">GUI</abbr> (as opposed to only through a YAML file).</div></li>
+</ul>
+</li>
+  <li  value="4" data-marker="4."><div class="li">Keep <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:azure_repo.png" width=50px /> selected and click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:continue_button.png" width=60px />.</div></li>
+  <li  value="5" data-marker="5."><div class="li">On the template selection screen, click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:empty_job.png" width=65px /> at the top of the page.</div></li>
+  <li  value="6" data-marker="6."><div class="li"><strong><span style="color:#a9a9a9;">(Optional)</span></strong> A classic pipeline will add the <code><span style="color:#ff0000;">-Cl</span></code> suffix to the pipeline title by default. Change it to <code><span style="color:#ff0000;">-Classic</span></code> for clarity&#039;s sake.</div></li>
+  <li  value="7" data-marker="7."><div class="li"><strong><span style="color:#a9a9a9;">(Optional)</span></strong> Change the default <strong>job</strong>&#039;s name from <code><span style="color:#ff0000;">Agent job 1</span></code> to something more descriptive (i.e., <code><span style="color:#ff0000;">Build &amp; Run</span></code>).</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler') .style.display=='none') {document.getElementById('spoiler') .style.display=''}else{document.getElementById('spoiler') .style.display='none'};document.getElementById('video1').src = '17_-_create_pipeline.mp4'">Show Me!</button>
+<div id="spoiler" style="display:none">
+<video id="video1" width="375" height="332" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_2'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[1. Create a new Pipeline] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="create_a_new_pipeline" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="786-2953" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="1. Create a new Pipeline">Edit</button></div></form></div>
+<h2 class="sectionedit3" id="add_tasksnuget_restore_visual_studio_build">2. Add Tasks: NuGet Restore &amp; Visual Studio Build</h2>
+<div class="level2">
+<div class="wrap_indent plugin_wrap">
+<h3 class="sectionedit6" id="nuget_restore">NuGet Restore</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click the <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:sgn.png" width=12px /> on the <strong>job</strong> (<img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_plus.png" width=100px />).</div></li>
+  <li  value="2" data-marker="2."><div class="li"><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:search.png" width=70px /> for and <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:add_button2.png" width=70px />  <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:nuget_restore.png" width=20px /><b>NuGet</b>. By default, it should add as <a href="https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore" class="urlextern" target="_blank" title="https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore" rel="nofollow noopener">NuGet restore</a>.
+<ul  class="extlist">
+  <li><div class="li">This pipeline step will install (a.k.a. “restore”) our project&#039;s dependancies on the pipeline agent so the code can properly run.</div></li>
+</ul>
+</li>
+  <li  value="3" data-marker="3."><div class="li">Under <strong>Path to solution, packages.config, or project.json</strong>, browse (<img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:browse_dots.png" width=18px />) to <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:helloworld_sln.png" width=100px /> in the root of your repo.</div></li>
+</ol>
+
+<h3 class="sectionedit7" id="visual_studio_build">Visual Studio Build</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click the <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:sgn.png" width=12px /> on the <strong>job</strong> (<img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_plus.png" width=100px />).</div></li>
+  <li  value="2" data-marker="2."><div class="li"><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:search.png" width=70px /> for and <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:add_button2.png" width=70px />  <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:visual_studio_build.png" width=20px /><b>Visual Studio build</b>.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Under <strong>Solution</strong>, browse (<img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:browse_dots.png" width=18px />) to <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:helloworld_sln.png" width=100px /> in the root of your repo.</div></li>
+</ol>
+</div>
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler2') .style.display=='none') {document.getElementById('spoiler2') .style.display=''}else{document.getElementById('spoiler2') .style.display='none'};document.getElementById('video2').src = '18_-_restore_and_build.mp4'">Show Me!</button>
+<div id="spoiler2" style="display:none">
+<video id="video2" width="380" height="231" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_3'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[2. Add Tasks: NuGet Restore &amp; Visual Studio Build] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="add_tasksnuget_restore_visual_studio_build" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="2954-6149" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="2. Add Tasks: NuGet Restore &amp; Visual Studio Build">Edit</button></div></form></div>
+<h2 class="sectionedit8" id="add_taskcommand_line">3. Add Task: Command Line</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click the <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:sgn.png" width=12px /> on the <strong>job</strong> (<img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_plus.png" width=100px />).</div></li>
+  <li  value="2" data-marker="2."><div class="li"><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:search.png" width=70px /> for and <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:add_button2.png" width=70px />  <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:command_line.png" width=20px /><b>Command line</b>.</div></li>
+  <li  value="3" data-marker="3."><div class="li"><strong><span style="color:#a9a9a9;">(Optional)</span></strong> Choose a more descriptive <strong>Display name</strong> (i.e., <code><span style="color:#ff0000;">Output » txt</span></code>).</div></li>
+  <li  value="4" data-marker="4."><div class="li">Under <strong>Script</strong>, enter <code><span style="color:#ff0000;">.\path\to\MainApp.exe » path\to\TestCases.dll&#039;s\directory</span></code>.
+<ul  class="extlist">
+  <li><div class="li"><strong>Example</strong>: <code><span style="color:#ff0000;">.\MainApp\bin\Debug\netcoreapp3.0\MainApp.exe » TestCases\bin\Debug\netcoreapp3.0</span></code></div></li>
+  <li><div class="li"><em><strong>Note</strong>: The <code><span style="color:#ff0000;">.\</span></code> start to <code><span style="color:#ff0000;">MainApp.exe</span></code>&#039;s filepath is needed to make <code><span style="color:#ff0000;">MainApp.exe</span></code> execute.</em></div></li>
+</ul>
+</li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler3') .style.display=='none') {document.getElementById('spoiler3') .style.display=''}else{document.getElementById('spoiler3') .style.display='none'};document.getElementById('video3').src = '19_-_pipeline_cmd.mp4'">Show Me!</button>
+<div id="spoiler3" style="display:none">
+<video id="video3" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_8'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[3. Add Task: Command Line] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="add_taskcommand_line" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="6150-7997" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="3. Add Task: Command Line">Edit</button></div></form></div>
+<h2 class="sectionedit9" id="add_taskvisual_studio_test">4. Add Task: Visual Studio Test</h2>
+<div class="level2">
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click the <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:sgn.png" width=12px /> on the <strong>job</strong> (<img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_plus.png" width=100px />).</div></li>
+  <li  value="2" data-marker="2."><div class="li"><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:search.png" width=70px /> for and <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:add_button2.png" width=70px />  <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:visual_studio_test.png" width=20px /><b>Visual Studio Test</b>.</div></li>
+  <li  value="3" data-marker="3."><div class="li"><strong><span style="color:#a9a9a9;">(Optional)</span></strong> Choose a more descriptive <strong>Display name</strong> (i.e., <code><span style="color:#ff0000;">Test CharN</span></code>).</div></li>
+  <li  value="4" data-marker="4."><div class="li">Under <strong>Test files</strong>, enter <code><span style="color:#ff0000;">path\to\TestCases.dll</span></code>.
+<ul  class="extlist">
+  <li><div class="li"><strong>Example</strong>: <code><span style="color:#ff0000;">TestCases\bin\Debug\netcoreapp3.0\TestCases.dll</span></code></div></li>
+</ul>
+</li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler4') .style.display=='none') {document.getElementById('spoiler4') .style.display=''}else{document.getElementById('spoiler4') .style.display='none'};document.getElementById('video4').src = '20_-_mstest.mp4'">Show Me!</button>
+<div id="spoiler4" style="display:none">
+<video id="video4" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_9'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[4. Add Task: Visual Studio Test] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="add_taskvisual_studio_test" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="7998-9625" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="4. Add Task: Visual Studio Test">Edit</button></div></form></div>
+<h2 class="sectionedit10" id="run_the_pipeline_view_the_test_results">5. Run the Pipeline &amp; View the Test Results</h2>
+<div class="level2">
+<div class="wrap_indent plugin_wrap">
+<h3 class="sectionedit13" id="run_the_pipeline">Run the Pipeline</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:save_and_queue_parent.png" width=95px /> &gt; <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:save_and_queue.png" width=95px /> to run the pipeline.</div></li>
+  <li  value="2" data-marker="2."><div class="li">For <strong>Agent Specification</strong>, choose <code><span style="color:#ff0000;">windows-2019</span></code>.</div></li>
+  <li  value="3" data-marker="3."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:save_and_run.png" width=95px />.</div></li>
+  <li  value="4" data-marker="4."><div class="li">You&#039;ll be redirected to a page showing the pipeline&#039;s running jobs. Click the running job to view its progress:<br /><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:run_job.png" width=95px /></div></li>
+</ol>
+
+<h3 class="sectionedit14" id="review_the_test_results">Review the Test Results</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">After your pipeline&#039;s done running, go to the pipeline <strong>run</strong>&#039;s results by clicking the <strong>Build ID</strong> (i.e., <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_id.png" width=25px />) in the <strong>breadcrumb trail</strong> at the top center of the web page.</div></li>
+  <li  value="2" data-marker="2."><div class="li">On the results page, click <strong>Tests</strong> underneath the <strong>run</strong>&#039;s title.</div></li>
+  <li  value="3" data-marker="3."><div class="li"><strong>Passed</strong> tests don&#039;t appear by default. To enable them, click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:aborted.png" width=75px /> &gt; <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:passed.png" width=75px />.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Now you can see your Char4 and Char5 test results:<br /><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:tests_passed.png" width=550px /><br /></div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler5') .style.display=='none') {document.getElementById('spoiler5') .style.display=''}else{document.getElementById('spoiler5') .style.display='none'};document.getElementById('video5').src = '21_-_run_pipeline_success.mp4'">Show Me!</button>
+<div id="spoiler5" style="display:none">
+<video id="video5" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+</div>
+</div>
+<div class='secedit editbutton_section editbutton_10'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[5. Run the Pipeline &amp; View the Test Results] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="run_the_pipeline_view_the_test_results" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="9626-12062" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="5. Run the Pipeline &amp; View the Test Results">Edit</button></div></form></div>
+<h2 class="sectionedit15" id="change_a_test_to_fail_re-run_the_pipeline">6. Change a Test to Fail &amp; Re-run the Pipeline</h2>
+<div class="level2">
+<div class="wrap_indent plugin_wrap">
+<h3 class="sectionedit18" id="change_a_test_to_fail">Change a Test to Fail</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Open your <strong>TestCases</strong> project in Visual Studio.</div></li>
+  <li  value="2" data-marker="2."><div class="li">In the <code><span style="color:#ff0000;">Char5</span></code> <code><span style="color:#ff0000;">[TestMethod]</span></code>, change the <code><span style="color:#ff0000;">&lt;expected letter&gt;</span></code> from <code><span style="color:#ff0000;">“o”</span></code> to something else (i.e., <code><span style="color:#ff0000;">“l”</span></code>):<pre>[TestMethod]
+  public void Char5()
+    {
+     letter = txtOutput.Substring(4, 1);
+     Assert.AreEqual(letter, "<font color="#ff00ff"><b><u>l</u></b></font>");
+    }</pre></div></li>
+  <li  value="3" data-marker="3."><div class="li">In a terminal within the repo&#039;s root, run <code><span style="color:#ff0000;">git add .</span></code>, <code><span style="color:#ff0000;">git commit -m “your_comment_here”</span></code>, and <code><span style="color:#ff0000;">git push</span></code>.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler6') .style.display=='none') {document.getElementById('spoiler6') .style.display=''}else{document.getElementById('spoiler6') .style.display='none'};document.getElementById('video6').src = '22_-_upload_char5_fail.mp4'">Show Me!</button>
+<div id="spoiler6" style="display:none">
+<video id="video6" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+<h3 class="sectionedit19" id="re-run_the_pipeline_view_the_results">Re-run the Pipeline &amp; View the Results</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:pipeline.png" width=80px /> and click your pipeline under <strong>Recently run pipelines</strong>.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:run_pipeline.png" width=70px />.</div></li>
+  <li  value="3" data-marker="3."><div class="li">After your pipeline&#039;s done running, go to the pipeline <strong>run</strong>&#039;s results by clicking the <strong>Build ID</strong> (i.e., <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_id.png" width=25px />) in the <strong>breadcrumb trail</strong> at the top center of the web page.</div></li>
+  <li  value="4" data-marker="4."><div class="li">On the results page, click <strong>Tests</strong> underneath the <strong>run</strong>&#039;s title.</div></li>
+  <li  value="5" data-marker="5."><div class="li"><strong>Passed</strong> tests don&#039;t appear by default. To enable them, click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:aborted.png" width=75px /> &gt; <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:passed.png" width=75px />.</div></li>
+  <li  value="6" data-marker="6."><div class="li">Now you can see your Char4 and Char5 test results:<br /><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:pipeline_fail.png" width=550px /><br /></div></li>
+  <li  value="7" data-marker="7."><div class="li">Double-click a failed test to see the <strong>Error message</strong> and <strong>Stack trace</strong>:<br /><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:fail_details.png" width=400px /></div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler7') .style.display=='none') {document.getElementById('spoiler7') .style.display=''}else{document.getElementById('spoiler7') .style.display='none'};document.getElementById('video7').src = '23_-_run_pipeline_fail.mp4'">Show Me!</button>
+<div id="spoiler7" style="display:none">
+<video id="video7" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+</div>
+</div>
+<div class='secedit editbutton_section editbutton_15'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[6. Change a Test to Fail &amp; Re-run the Pipeline] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="change_a_test_to_fail_re-run_the_pipeline" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="12063-15452" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="6. Change a Test to Fail &amp; Re-run the Pipeline">Edit</button></div></form></div>
+<h2 class="sectionedit20" id="configure_continuous_integration_ci">7. Configure Continuous Integration (CI)</h2>
+<div class="level2">
+
+<p>
+Now let&#039;s enable <strong>Continuous Integration (CI)</strong>. <strong>CI</strong> will make the pipeline automatically run whenever code is <code><span style="color:#ff0000;">push</span></code>ed to the specified branch on the remote repo.
+</p>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:pipeline.png" width=80px />.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Hover over your pipeline to reveal the <strong>More…</strong> kebab menu (<img src="azure3.html" data-src="pipeline_kebab.png" width="140" />).</div></li>
+  <li  value="3" data-marker="3."><div class="li">Click <img src="azure3.html" data-src="kebab.png" width="18" /> > <img src="azure3.html" data-src="edit_button.png" width="55" />.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Click the <strong>Triggers</strong> tab &gt; <strong>Enable continuous integration</strong>.</div></li>
+  <li  value="5" data-marker="5."><div class="li">Click the <strong>Tasks</strong> tab &gt; <strong>Pipeline</strong>.<br /><img src="azure3.html" data-src="tasks_pipeline.png" width="265" /></div></li>
+  <li  value="6" data-marker="6."><div class="li">Under <strong>Agent Specification</strong>, choose <code><span style="color:#ff0000;">windows-2019</span></code>.
+<ul  class="extlist">
+  <li><div class="li">This makes <code><span style="color:#ff0000;">windows-2019</span></code> the default agent whenever the pipeline is triggered. The latest Windows agent is necessary for our app to run.</div></li>
+</ul>
+</li>
+  <li  value="7" data-marker="7."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:save_and_queue_parent.png" width=95px /> &gt; <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:save_button.png" width=80px />.</div></li>
+  <li  value="8" data-marker="8."><div class="li">Add a descriptive <strong>Comment</strong> and click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:save.png" width=60px />.</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler8') .style.display=='none') {document.getElementById('spoiler8') .style.display=''}else{document.getElementById('spoiler8') .style.display='none'};document.getElementById('video8').src = '24_-_continuous_integration.mp4'">Show Me!</button>
+<div id="spoiler8" style="display:none">
+<video id="video8" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_20'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[7. Configure Continuous Integration (CI)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="configure_continuous_integration_ci" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="15453-17747" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="7. Configure Continuous Integration (CI)">Edit</button></div></form></div>
+<h2 class="sectionedit21" id="trigger_continuous_integration">8. Trigger Continuous Integration</h2>
+<div class="level2">
+
+<p>
+Let&#039;s see <strong>CI</strong> in action.
+</p>
+<div class="wrap_indent plugin_wrap">
+<h3 class="sectionedit24" id="fix_the_failed_test_trigger_ci">Fix the Failed Test &amp; Trigger CI</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:pipeline.png" width=80px />. Notice–of course–the pipeline isn&#039;t running.</div></li>
+  <li  value="2" data-marker="2."><div class="li">Open your <strong>TestCases</strong> project in Visual Studio.</div></li>
+  <li  value="3" data-marker="3."><div class="li">In the <code><span style="color:#ff0000;">Char5</span></code> <code><span style="color:#ff0000;">[TestMethod]</span></code>, change the <code><span style="color:#ff0000;">&lt;expected letter&gt;</span></code> back to the correct letter (<code><span style="color:#ff0000;">“o”</span></code>):<pre>[TestMethod]
+  public void Char5()
+    {
+     letter = txtOutput.Substring(4, 1);
+     Assert.AreEqual(letter, "<font color="#ff00ff"><b><u>o</u></b></font>");
+    }</pre></div></li>
+  <li  value="4" data-marker="4."><div class="li">From within the repo&#039;s root, run <code><span style="color:#ff0000;">git add .</span></code>, <code><span style="color:#ff0000;">git commit -m “your_comment_here”</span></code>, and <code><span style="color:#ff0000;">git push</span></code>.</div></li>
+  <li  value="5" data-marker="5."><div class="li">Refresh your <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:pipeline.png" width=80px /> page. Thanks to the code <code><span style="color:#ff0000;">push</span></code>, a pipeline <strong>run</strong> should have been triggered!</div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler9') .style.display=='none') {document.getElementById('spoiler9') .style.display=''}else{document.getElementById('spoiler9') .style.display='none'};document.getElementById('video9').src = '25_-_trigger_pipeline.mp4'">Show Me!</button>
+<div id="spoiler9" style="display:none">
+<video id="video9" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+
+<h3 class="sectionedit25" id="review_the_test_results1">Review the Test Results</h3>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">After your pipeline&#039;s done running, go to the pipeline <strong>run</strong>&#039;s results by clicking the <strong>Build ID</strong> (i.e., <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:build_id.png" width=25px />) in the <strong>breadcrumb trail</strong> at the top center of the web page.</div></li>
+  <li  value="2" data-marker="2."><div class="li">On the results page, click <strong>Tests</strong> underneath the <strong>run</strong>&#039;s title.</div></li>
+  <li  value="3" data-marker="3."><div class="li"><strong>Passed</strong> tests don&#039;t appear by default. To enable them, click <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:aborted.png" width=75px /> &gt; <img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:passed.png" width=75px />.</div></li>
+  <li  value="4" data-marker="4."><div class="li">Now you can see your Char4 and Char5 test results:<br /><img src="azure3.html" data-src="https://sawtoothcapstone.com/lib/exe/fetch.php?media=sawtooth:walkthroughs:tests_passed.png" width=550px /><br /></div></li>
+</ol>
+
+<p>
+
+<button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler10') .style.display=='none') {document.getElementById('spoiler10') .style.display=''}else{document.getElementById('spoiler10') .style.display='none'};document.getElementById('video10').src = '26_-_observe_pipeline_results.mp4'">Show Me!</button>
+<div id="spoiler10" style="display:none">
+<video id="video10" width="381" height="238" controls autoplay loop muted playsinline></video>
+</div>
+
+</p>
+</div>
+</div>
+<div class='secedit editbutton_section editbutton_21'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[8. Trigger Continuous Integration] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="trigger_continuous_integration" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="17748-20986" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="8. Trigger Continuous Integration">Edit</button></div></form></div>
+<h2 class="sectionedit26" id="configure_continuous_deployment_cd">9. Configure Continuous Deployment (CD)</h2>
+<div class="level2">
+
+<p>
+To configure CD, we need a release pipeline that takes <strong>artifacts</strong> published by our standard pipeline.
+</p>
+
+<ol start="1"  class="extlist">
+  <li  value="1" data-marker="1."><div class="li">Add a <strong>Copy Files</strong> pipeline task with the below settings &amp; a <strong>Publish Artifact</strong> task with the default settings:</div></li>
+</ol>
+
+<p>
+<a href="copy_files.id.sawtooth_3Awalkthroughs_3Aazure3.png.detail.html?id=sawtooth%3Awalkthroughs%3Aazure3&media=sawtooth:walkthroughs:copy_files.png" class="media" title="sawtooth:walkthroughs:copy_files.png"><img src="copy_files.tok.e03230_w.800.png" class="mediacenter" alt="" width="800" /></a>
+</p>
+
+<ol start="2"  class="extlist">
+  <li  value="2" data-marker="2."><div class="li">At <a href="https://portal.azure.com" class="urlextern" target="_blank" title="https://portal.azure.com" rel="nofollow noopener">portal.azure.com</a>, use the search bar to find <strong>Subscriptions</strong> and <strong>+ Add</strong> a <strong>Free Trial</strong>.</div></li>
+  <li  value="3" data-marker="3."><div class="li">At <a href="https://portal.azure.com" class="urlextern" target="_blank" title="https://portal.azure.com" rel="nofollow noopener">portal.azure.com</a>, use the search bar to find <strong>App Services</strong> and <strong>+ Add</strong> a <strong>Web App</strong>.</div></li>
+</ol>
+
+<p>
+<a href="new_web_app.id.sawtooth_3Awalkthroughs_3Aazure3.png.detail.html?id=sawtooth%3Awalkthroughs%3Aazure3&media=sawtooth:walkthroughs:new_web_app.png" class="media" title="sawtooth:walkthroughs:new_web_app.png"><img src="new_web_app.tok.b8ed1f_w.520.png" class="mediacenter" alt="" width="520" /></a>
+</p>
+
+<ol start="4"  class="extlist">
+  <li  value="4" data-marker="4."><div class="li">In Azure DevOps, create a new <strong>Release Pipeline</strong>.</div></li>
+</ol>
+
+<p>
+<a href="new_release.id.sawtooth_3Awalkthroughs_3Aazure3.png.detail.html?id=sawtooth%3Awalkthroughs%3Aazure3&media=sawtooth:walkthroughs:new_release.png" class="media" title="sawtooth:walkthroughs:new_release.png"><img src="new_release.tok.b5563c_w.400.png" class="mediacenter" alt="" width="400" /></a>
+</p>
+
+<ol start="5"  class="extlist">
+  <li  value="5" data-marker="5."><div class="li">In the <strong>Stage</strong> settings, choose the <strong>Azure subscription</strong> and <strong>App service name</strong> you just made.</div></li>
+</ol>
+
+<p>
+<a href="choose_subscription.id.sawtooth_3Awalkthroughs_3Aazure3.png.detail.html?id=sawtooth%3Awalkthroughs%3Aazure3&media=sawtooth:walkthroughs:choose_subscription.png" class="media" title="sawtooth:walkthroughs:choose_subscription.png"><img src="choose_subscription.tok.e11070_w.800.png" class="mediacenter" alt="" width="800" /></a>
+<a href="app_service_name.id.sawtooth_3Awalkthroughs_3Aazure3.png.detail.html?id=sawtooth%3Awalkthroughs%3Aazure3&media=sawtooth:walkthroughs:app_service_name.png" class="media" title="sawtooth:walkthroughs:app_service_name.png"><img src="app_service_name.tok.66b1e6_w.500.png" class="mediacenter" alt="" width="500" /></a>
+</p>
+
+<ol start="6"  class="extlist">
+  <li  value="6" data-marker="6."><div class="li"><strong>Edit</strong> the pipeline and enable the <strong>Continuous deployment trigger</strong>.</div></li>
+</ol>
+
+<p>
+<a href="cd_trigger.id.sawtooth_3Awalkthroughs_3Aazure3.png.detail.html?id=sawtooth%3Awalkthroughs%3Aazure3&media=sawtooth:walkthroughs:cd_trigger.png" class="media" title="sawtooth:walkthroughs:cd_trigger.png"><img src="cd_trigger.tok.4d0237_w.400.png" class="mediacenter" alt="" width="400" /></a>
+</p>
+
+</div>
+<div class='secedit editbutton_section editbutton_26'><form class="button btn_secedit" method="post" action="../..//doku.html.doku.php.html"><div class="no"><input type="hidden" name="do" value="edit" /><input type="hidden" name="rev" value="1586336256" /><input type="hidden" name="summary" value="[9. Configure Continuous Deployment (CD)] " /><input type="hidden" name="target" value="section" /><input type="hidden" name="hid" value="configure_continuous_deployment_cd" /><input type="hidden" name="codeblockOffset" value="0" /><input type="hidden" name="range" value="20987-" /><input type="hidden" name="id" value="sawtooth:walkthroughs:azure3" /><button type="submit" title="9. Configure Continuous Deployment (CD)">Edit</button></div></form></div>
+                    <!-- wikipage stop -->
+                                    </div>
+
+                <div class="docInfo"><bdi>sawtooth/walkthroughs/azure3.txt</bdi> · Last modified: 2020/04/08 08:57 by <bdi>67.186.211.117</bdi></div>
+
+                            </div></div><!-- /content -->
+
+            <hr class="a11y" />
+
+            <!-- PAGE ACTIONS -->
+            <div id="dokuwiki__pagetools">
+                <h3 class="a11y">Page Tools</h3>
+                <div class="tools">
+                    <ul>
+                        <li class="edit"><a href="azure3.html" title="Edit this page [e]" rel="nofollow" accesskey="e"><span>Edit this page</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg></a></li><li class="revs"><a href="azure3.html" title="Old revisions [o]" rel="nofollow" accesskey="o"><span>Old revisions</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M11 7v5.11l4.71 2.79.79-1.28-4-2.37V7m0-5C8.97 2 5.91 3.92 4.27 6.77L2 4.5V11h6.5L5.75 8.25C6.96 5.73 9.5 4 12.5 4a7.5 7.5 0 0 1 7.5 7.5 7.5 7.5 0 0 1-7.5 7.5c-3.27 0-6.03-2.09-7.06-5h-2.1c1.1 4.03 4.77 7 9.16 7 5.24 0 9.5-4.25 9.5-9.5A9.5 9.5 0 0 0 12.5 2z"/></svg></a></li><li class="backlink"><a href="azure3.html" title="Backlinks" rel="nofollow"><span>Backlinks</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M10.59 13.41c.41.39.41 1.03 0 1.42-.39.39-1.03.39-1.42 0a5.003 5.003 0 0 1 0-7.07l3.54-3.54a5.003 5.003 0 0 1 7.07 0 5.003 5.003 0 0 1 0 7.07l-1.49 1.49c.01-.82-.12-1.64-.4-2.42l.47-.48a2.982 2.982 0 0 0 0-4.24 2.982 2.982 0 0 0-4.24 0l-3.53 3.53a2.982 2.982 0 0 0 0 4.24m2.82-4.24c.39-.39 1.03-.39 1.42 0a5.003 5.003 0 0 1 0 7.07l-3.54 3.54a5.003 5.003 0 0 1-7.07 0 5.003 5.003 0 0 1 0-7.07l1.49-1.49c-.01.82.12 1.64.4 2.43l-.47.47a2.982 2.982 0 0 0 0 4.24 2.982 2.982 0 0 0 4.24 0l3.53-3.53a2.982 2.982 0 0 0 0-4.24.973.973 0 0 1 0-1.42z"/></svg></a></li><li class="siteexport_addpage"><a href="azure3.html" title="Export Page to HTML/PDF" rel="nofollow"><span>Export Page to HTML/PDF</span><svg width="61px" height="51px" viewBox="0 0 61 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs></defs><path d="M26.1891503,39.0065635 L26.0876578,38.9773206 L60.6523866,1.23972885 L60.4321374,2.11844376 L60.476442,2.07071678 L60.4265202,2.14085429 L49.5024876,45.7237994 L32.8255882,40.9187101 L26,50.508302 L26,39.2103249 L26.1891503,39.0065635 Z M60.9727675,0.862917243 L22.2676619,38.2155059 L-0.00245042233,30.2214566 L60.9727675,0.862917243 Z" id="Paper-Plane"></path></svg></a></li><li class="export_pdf"><a href="azure3.html" title="Export to PDF" rel="nofollow"><span>Export to PDF</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M14 9h5.5L14 3.5V9M7 2h8l6 6v12a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m4.93 10.44c.41.9.93 1.64 1.53 2.15l.41.32c-.87.16-2.07.44-3.34.93l-.11.04.5-1.04c.45-.87.78-1.66 1.01-2.4m6.48 3.81c.18-.18.27-.41.28-.66.03-.2-.02-.39-.12-.55-.29-.47-1.04-.69-2.28-.69l-1.29.07-.87-.58c-.63-.52-1.2-1.43-1.6-2.56l.04-.14c.33-1.33.64-2.94-.02-3.6a.853.853 0 0 0-.61-.24h-.24c-.37 0-.7.39-.79.77-.37 1.33-.15 2.06.22 3.27v.01c-.25.88-.57 1.9-1.08 2.93l-.96 1.8-.89.49c-1.2.75-1.77 1.59-1.88 2.12-.04.19-.02.36.05.54l.03.05.48.31.44.11c.81 0 1.73-.95 2.97-3.07l.18-.07c1.03-.33 2.31-.56 4.03-.75 1.03.51 2.24.74 3 .74.44 0 .74-.11.91-.3m-.41-.71l.09.11c-.01.1-.04.11-.09.13h-.04l-.19.02c-.46 0-1.17-.19-1.9-.51.09-.1.13-.1.23-.1 1.4 0 1.8.25 1.9.35M8.83 17c-.65 1.19-1.24 1.85-1.69 2 .05-.38.5-1.04 1.21-1.69l.48-.31m3.02-6.91c-.23-.9-.24-1.63-.07-2.05l.07-.12.15.05c.17.24.19.56.09 1.1l-.03.16-.16.82-.05.04z"/></svg></a></li><li class="top"><a href="#dokuwiki__top" title="Back to top [t]" rel="nofollow" accesskey="t"><span>Back to top</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"/></svg></a></li>                    </ul>
+                </div>
+            </div>
+        </div><!-- /wrapper -->
+
+        
+<!-- ********** FOOTER ********** -->
+<div id="dokuwiki__footer"><div class="pad">
+    <div class="license">Except where otherwise noted, content on this wiki is licensed under the following license: <bdi><a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" class="urlextern" target="_blank">CC Attribution-Share Alike 4.0 International</a></bdi></div>
+    <div class="buttons">
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/" rel="license" target="_blank"><img src="../../lib/images/license/button/cc-by-sa.png" alt="CC Attribution-Share Alike 4.0 International" /></a>        <a href="https://www.dokuwiki.org/donate" title="Donate" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-donate.gif" width="80" height="15" alt="Donate" /></a>
+        <a href="https://php.net" title="Powered by PHP" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-php.gif" width="80" height="15" alt="Powered by PHP" /></a>
+        <a href="../../check/referer" title="Valid HTML5" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-html5.png" width="80" height="15" alt="Valid HTML5" /></a>
+        <a href="../../css-validator/check/referer.profile.css3?profile=css3" title="Valid CSS" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-css.png" width="80" height="15" alt="Valid CSS" /></a>
+        <a href="https://dokuwiki.org/" title="Driven by DokuWiki" target="_blank"><img
+            src="../../lib/tpl/dokuwiki/images/button-dw.png" width="80" height="15" alt="Driven by DokuWiki" /></a>
+    </div>
+</div></div><!-- /footer -->
+
+    </div></div><!-- /site -->
+
+    <div class="no"><img  width="2" height="1" alt="" /></div>
+    <div id="screen__mode" class="no"></div></body>
+</html>
