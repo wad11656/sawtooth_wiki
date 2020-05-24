@@ -61,182 +61,185 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 ```CSS
 <CSS>
 .container {
-  display: flex;
-  /* align-items: center; */
-  align-items: center;
-  /* justify-content: center; */
-  justify-content: initial;
+	display: flex;
+	align-items: center;
+	justify-content: initial;
 }
 
-p { margin: 0 0 0; }
-
-ul { margin: 0 0 0; }
-
-ol { margin: 0 0 0; }
+p {
+	margin: 0 0 0;
+}
+ul {
+	margin: 0 0 0;
+}
+ol {
+	margin: 0 0 0;
+}
 
 .rectangle {
-  min-height: 300px;
-  height: auto;
-  width: 100%;
-  border-style: solid;
-  border-radius: 10px 25px;
-  border-width: 1px; 
-  border-color: #00008b;
-  background-color: #add8e6;
-  transition: all .5s linear;
+	min-height: 300px;
+	height: auto;
+	width: 100%;
+	border-style: solid;
+	border-radius: 10px 25px;
+	border-width: 1px;
+	border-color: #00008b;
+	background-color: #add8e6;
+	transition: all .5s linear;
 }
-
 
 /* Striped UL */
-
 ul.striped-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    max-width: 200px;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	max-width: 200px;
 }
-ul.striped-list > li {
-    border-bottom: 1px solid rgb(221,221,221);
-    padding: 6px;
+ul.striped-list>li {
+	border-bottom: 1px solid rgb(221, 221, 221);
+	padding: 6px;
 }
-ul.striped-list > li:nth-of-type(odd) {
-    background-color: #e9e9f9 ;
+ul.striped-list>li:nth-of-type(odd) {
+	background-color: #e9e9f9;
 }
-ul.striped-list > li:last-child {
-    border-bottom: none;
+ul.striped-list>li:last-child {
+	border-bottom: none;
 }
 
 
 /* Class for placeholder text */
-
-.tab { position:absolute;left:36%;
-    color: darkblue; }
+.tab {
+	position: absolute;
+	left: 36%;
+	color: darkblue;
+}
 
 
 /* Set box contents to darkblue */
-
-.boxcont { color: darkblue; }
-
-img, span{
-   display:table-cell;
+.boxcont {
+	color: darkblue;
 }
 
+/* Growing images */
+img,
+span {
+	display: table-cell;
+}
 .grow {
-    transition: all .2s ease-in-out;
-    }
-    
+	transition: all .2s ease-in-out;
+}
 .grow:hover {
-    transform: scale(1.1);
-    }
+	transform: scale(1.1);
+}
 
+/* Main background image */
 #main {
-  width: 100%;
+	width: 100%;
 }
 #photo {
-  display:flex;
+	display: flex;
 }
-
-#photo > #photo-center {
-  width:100%;
-  position:relative;
-  display: block;
-  margin-left: auto;
-  margin-right: 0px;
+#photo>#photo-center {
+	width: 100%;
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: 0px;
 }
 
 /* Diagram */
-#large{
-    width:100%;
-  }
+#large {
+	width: 100%;
+}
 
 /* Server Ops 2 - Bob */
-#ops2{
-    width:17%;
-    position:absolute;
-    left:44%;
-    right:0px;
-  top:0%;
-  z-index:1;
-    }
- 
+#ops2 {
+	width: 17%;
+	position: absolute;
+	left: 44%;
+	right: 0px;
+	top: 0%;
+	z-index: 1;
+}
+
 /* Server Ops 1 - Alice */
-#ops1{
-    width:17%;
-    position:absolute;
-    left:85%;
-    right:0px;
-  top:0%;
-  z-index:1;
-    }
-    
+#ops1 {
+	width: 17%;
+	position: absolute;
+	left: 85%;
+	right: 0px;
+	top: 0%;
+	z-index: 1;
+}
+
 /* QA Black Box - Steve */
-#qablack{
-    width:10%;
-    position:absolute;
-    left:60%;
-    right:0px;
-  top:36%;
-  z-index:1;
-    }
-    
+#qablack {
+	width: 10%;
+	position: absolute;
+	left: 60%;
+	right: 0px;
+	top: 36%;
+	z-index: 1;
+}
+
 /* QA Load Testing - Jerry */
-#qaload{
-    width:20%;
-    position:absolute;
-    left:63%;
-    right:0px;
-  top:65%;
-  z-index:1;
-    }
-    
+#qaload {
+	width: 20%;
+	position: absolute;
+	left: 63%;
+	right: 0px;
+	top: 65%;
+	z-index: 1;
+}
+
 /* QA Software Engineer - Charlie */
-#qasoft{
-    width:17%;
-    position:absolute;
-    left:73%;
-    right:0px;
-  top:38%;
-  z-index:1;
-    }
-    
+#qasoft {
+	width: 17%;
+	position: absolute;
+	left: 73%;
+	right: 0px;
+	top: 38%;
+	z-index: 1;
+}
+
 /* Manager 2 - Peter */
-#mang2{
-    width:15%;
-    position:absolute;
-    left:22%;
-    right:0px;
-  top:-6%;
-  z-index:1;
-    }
-    
+#mang2 {
+	width: 15%;
+	position: absolute;
+	left: 22%;
+	right: 0px;
+	top: -6%;
+	z-index: 1;
+}
+
 /* Manager 1 - Craig */
-#mang1{
-    width:13%;
-    position:absolute;
-    left:6%;
-    right:0px;
-  top:-4%;
-  z-index:1;
-    }
-    
+#mang1 {
+	width: 13%;
+	position: absolute;
+	left: 6%;
+	right: 0px;
+	top: -4%;
+	z-index: 1;
+}
+
 /* Developer 1 - Bill */
-#soft1{
-    width:15%;
-    position:absolute;
-    left:0%;
-  top:48.5%;
-  z-index:1;
-    }
-    
+#soft1 {
+	width: 15%;
+	position: absolute;
+	left: 0%;
+	top: 48.5%;
+	z-index: 1;
+}
+
 /* Developer 2 - Jared */
-#soft2{
-    width:9%;
-    position:absolute;
-    left:3%;
-    right:0px;
-  top:22%;
-  z-index:1;
-    }
+#soft2 {
+	width: 9%;
+	position: absolute;
+	left: 3%;
+	right: 0px;
+	top: 22%;
+	z-index: 1;
+}
 </CSS>
 ```
 
