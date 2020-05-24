@@ -32,7 +32,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 
 ## HTML5 Video Spoiler/Reveal Button
 
-<img src="https://raw.githubusercontent.com/wad11656/sawtooth_wiki/master/README%20media/video_spoiler.gif" width="200">
+<img src="https://raw.githubusercontent.com/wad11656/sawtooth_wiki/master/README%20media/video_spoiler.gif" width="370">
 
 ### HTML + inline Javascript & CSS
 ```HTML
