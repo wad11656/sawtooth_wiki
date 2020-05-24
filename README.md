@@ -1,6 +1,6 @@
 # Sawtooth Wiki
 
-Though the site was made using DokuWiki, the built-in Wiki markdown was largely ignored to make room for custom Javascript and HTML. This was necessary to make the site's functionality and style conform to my vision.
+Though the site was made using DokuWiki, the built-in Wiki markdown was largely ignored in favor of custom Javascript and HTML. This was necessary to make the site's functionality and style conform to my vision.
 
 ## Image "Lazy Loading"
 Used to resolve an **Error 503** where the server was getting overloaded from trying to render too much media upon page-load. Lazy loading makes images only appear when you scroll to their location.
