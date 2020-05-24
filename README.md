@@ -5,7 +5,7 @@ Though the site was made using DokuWiki, the built-in Wiki markdown was largely 
 ## Image "Lazy Loading"
 Used to resolve an **Error 503** where the server was getting overloaded from trying to render too much media upon page-load. Lazy loading makes images only appear when you scroll to their location.
 
-### Javascript
+#### Javascript
 ```Javascript
 <JS>
     refresh_handler = function(e) {
@@ -25,7 +25,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 </JS>
 ```
 
-### HTML
+#### HTML
 ```HTML
 <HTML><img src="" data-src="lib/exe/fetch.php?media=sawtooth:walkthroughs:overview.png" width="85" /></HTML>
 ```
@@ -34,7 +34,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 
 <img src="https://raw.githubusercontent.com/wad11656/sawtooth_wiki/master/README%20media/video_spoiler.gif" width="470">
 
-### HTML + inline Javascript & CSS
+#### HTML + inline Javascript & CSS
 ```HTML
 <html>
 <button title="Click to Show/Hide Content" type="button" onclick="if(document.getElementById('spoiler6') .style.display=='none') {document.getElementById('spoiler6') .style.display=''}else{document.getElementById('spoiler6') .style.display='none'};document.getElementById('video6').src = 'lib/exe/fetch.php?media=sawtooth:walkthroughs:6_-_first_commit_speed.mp4'">Show Me!</button>
@@ -48,7 +48,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 
 <img src="https://github.com/wad11656/sawtooth_wiki/raw/master/README%20media/workflow_woes.gif" width="470">
 
-### Javascript
+#### Javascript
 ```Javascript
 <JS>
     function changeContent(description) {
@@ -59,7 +59,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 </JS>
 ```
 
-### CSS
+#### CSS
 ```CSS
 <CSS>
 /* General formatting */
@@ -240,7 +240,7 @@ span {
 </CSS>
 ```
 
-### HTML
+#### HTML
 ```HTML
 <html>
 <a name="top_header"></a><br>
