@@ -94,7 +94,7 @@ ol {
 	color: darkblue;
 }
 
-/* Striped UL */
+/* Striped UL(Alternating colors in Unordered Lists) */
 ul.striped-list {
 	list-style-type: none;
 	margin: 0;
