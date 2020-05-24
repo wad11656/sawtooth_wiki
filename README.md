@@ -146,8 +146,6 @@ span {
 	margin-left: auto;
 	margin-right: 0px;
 }
-
-/* Diagram */
 #large {
 	width: 100%;
 }
