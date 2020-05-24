@@ -46,6 +46,8 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 
 ## Interactive Animated Employee Descriptions
 
+<img src="https://raw.githubusercontent.com/wad11656/sawtooth_wiki/master/README%20media/video_spoiler.gif" width="470">
+
 ### Javascript
 ```Javascript
 <JS>
