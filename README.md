@@ -60,12 +60,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 ### CSS
 ```CSS
 <CSS>
-.container {
-	display: flex;
-	align-items: center;
-	justify-content: initial;
-}
-
+/* General formatting */
 p {
 	margin: 0 0 0;
 }
@@ -76,6 +71,12 @@ ol {
 	margin: 0 0 0;
 }
 
+/* Blue box */
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: initial;
+}
 .rectangle {
 	min-height: 300px;
 	height: auto;
@@ -86,6 +87,9 @@ ol {
 	border-color: #00008b;
 	background-color: #add8e6;
 	transition: all .5s linear;
+}
+.boxcont {
+	color: darkblue;
 }
 
 /* Striped UL */
@@ -106,7 +110,6 @@ ul.striped-list>li:last-child {
 	border-bottom: none;
 }
 
-
 /* Class for placeholder text */
 .tab {
 	position: absolute;
@@ -114,13 +117,7 @@ ul.striped-list>li:last-child {
 	color: darkblue;
 }
 
-
-/* Set box contents to darkblue */
-.boxcont {
-	color: darkblue;
-}
-
-/* Growing images */
+/* Growing employee images */
 img,
 span {
 	display: table-cell;
