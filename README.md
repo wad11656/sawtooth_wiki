@@ -1,8 +1,12 @@
 # Sawtooth Wiki
 
+#### Demo: http://35.197.8.81:7070 ([Archived Version](https://web.archive.org/web/20220904221412/http://35.197.8.81:7070/))
+
+## Background
+
 I made this entire Wiki, aside from 10-20% of the plain text content, for my Senior project at University. Though the site was made using DokuWiki, the built-in Wiki markdown was largely ignored in favor of custom Javascript, HTML, and CSS that I wrote. This was necessary to make the site's functionality and style conform to my vision.
 
-## Image "Lazy Loading"
+## Noteworthy Custom Feature #1: Image "Lazy Loading"
 Used to resolve an **Error 503** where the server was getting overloaded from trying to render too much media upon page-load. Lazy loading makes images only appear when you scroll to their location.
 
 #### Javascript
@@ -30,7 +34,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 <HTML><img src="" data-src="lib/exe/fetch.php?media=sawtooth:walkthroughs:overview.png" width="85" /></HTML>
 ```
 
-## Video Spoiler/Reveal Button
+## Noteworthy Custom Feature #2: Video Spoiler/Reveal Button
 
 <img src="https://raw.githubusercontent.com/wad11656/sawtooth_wiki/master/README%20media/video_spoiler.gif" width="470">
 
@@ -44,7 +48,7 @@ Used to resolve an **Error 503** where the server was getting overloaded from tr
 </html>
 ```
 
-## Interactive Animated Employee Descriptions
+## Noteworthy Custom Feature #3: Interactive Animated Employee Descriptions
 
 <img src="https://github.com/wad11656/sawtooth_wiki/raw/master/README%20media/workflow_woes.gif" width="470">
 
