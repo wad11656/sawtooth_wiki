@@ -1,6 +1,6 @@
 # Sawtooth Wiki
 
-#### Demo: http://35.197.8.81:7070 ([Archived Version](https://web.archive.org/web/20220904221412/http://35.197.8.81:7070/))
+#### Demo: http://35.197.8.81:7070 ([Archived Version](https://web.archive.org/web/20220904221412/http://35.197.8.81:7070/start.html))
 
 ## Background
 
